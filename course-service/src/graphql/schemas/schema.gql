@@ -1,0 +1,55 @@
+type CourseCategory{
+    id: ID!
+    name: String!
+    description: String!
+    courses: [Course!]!
+}
+
+type Course{
+    id: ID!
+    name: String!
+    description: String!
+    category: CourseCategory!
+    lessons: [Lesson!]!
+}
+
+type Lesson{
+    id: ID!
+    name: String!
+    description: String!
+    course: Course!
+}
+
+type Query{
+    courseCategories: [CourseCategory!]!
+    courseCategory(id: ID!): CourseCategory!
+    courses: [Course!]!
+    course(id: ID!): Course!
+    lessons: [Lesson!]!
+    lesson(id: ID!): Lesson!
+}
+
+type Mutation{
+    createCourseCategory(name: String!, description: String!): CourseCategory!
+    updateCourseCategory(id: ID!, name: String!, description: String!): CourseCategory!
+    deleteCourseCategory(id: ID!): CourseCategory!
+    createCourse(name: String!, description: String!, category: ID!): Course!
+    updateCourse(id: ID!, name: String!, description: String!, category: ID!): Course!
+    deleteCourse(id: ID!): Course!
+    createLesson(name: String!, description: String!, course: ID!): Lesson!
+    updateLesson(id: ID!, name: String!, description: String!, course: ID!): Lesson!
+    deleteLesson(id: ID!): Lesson!
+}
+
+type Subscription{
+    courseCategoryCreated: CourseCategory!
+    courseCategoryUpdated: CourseCategory!
+    courseCategoryDeleted: CourseCategory!
+    courseCreated: Course!
+    courseUpdated: Course!
+    courseDeleted: Course!
+    lessonCreated: Lesson!
+    lessonUpdated: Lesson!
+    lessonDeleted: Lesson!
+}
+

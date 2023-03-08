@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server.js"
+    "prestart": "rm -rf dist && tsc",
+    "dev": "npm run prestart && nodemon ./dist/server.js",
+    "start": "tsc & nodemon ./dist/server.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -13,10 +16,13 @@
   },
   "author": "jubaerHossain",
   "bugs": {
-    "url" : "https://github.com/JubaerHossain/rabbitmq-services/issues"
+    "url": "https://github.com/JubaerHossain/rabbitmq-services/issues"
   },
   "license": "ISC",
   "dependencies": {
+    "@apollo/server": "^4.4.1",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/morgan": "^1.9.4",
     "apollo-server-express": "^3.12.0",
     "body-parser": "^1.20.2",
     "config": "^3.3.9",
@@ -24,9 +30,11 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "graphql": "^16.6.0",
+    "graphql-tools": "^8.3.19",
     "mongoose": "^7.0.1",
     "morgan": "^1.10.0",
     "swagger-ui-express": "^4.6.2",
+    "typescript": "^4.9.5",
     "uuid": "^9.0.0",
     "winston": "^3.8.2"
   },
