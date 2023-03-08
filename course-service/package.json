@@ -2,12 +2,19 @@
   "name": "course-service",
   "version": "1.0.0",
   "description": "course service to manage all course",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/app.js"
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JubaerHossain/rabbitmq-services.git"
   },
   "author": "jubaerHossain",
+  "bugs": {
+    "url" : "https://github.com/JubaerHossain/rabbitmq-services/issues"
+  },
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^3.12.0",
@@ -20,9 +27,11 @@
     "mongoose": "^7.0.1",
     "morgan": "^1.10.0",
     "swagger-ui-express": "^4.6.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.21",
+    "prettier": "2.8.4"
   }
 }
